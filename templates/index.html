@@ -16,33 +16,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.0.1/socket.io.min.js"></script>
 </head>
 <body>
-    <header class="header">
-        <div class="logo">Insure<span>Now</span></div>
-        <div class="header-links">
-            <p><a href="/signup">Sign Up</a></p>
-            <p><a href="/login">Log In</a></p>
-        </div>
-        
-    </header>
 
-    <h1 class="heading-xlarge">
-        Collect your 
-        <span style="display: block;">
-            <span id="dynamic-text" class="text-color-primary">Employee’s</span>
-            <span class="typed-cursor typed-cursor--blink">|</span>
-        </span> 
-        voice
-    </h1>
-
-    <div class="form-container">
-        <h1 id="formTitle">Medical Insurance Form</h1>
-        <label id="languageLabel">Language:
-            <select id="languageSelect" onchange="changeLanguage()">
-                <option value="en">English</option>
-                <option value="hi">Hindi</option>
-            </select>
-        </label>
-    </div>
 
     <div class="ml">
         <form id="insuranceForm" method="POST" action="/form-filling">
@@ -70,7 +44,7 @@
                     <button type="button" class="voice-icon" onclick="startVoiceInput('gender')">🎤</button>
                 </label>
                 <label id="ageLabel">Age: <br>
-                    <input type="number" id="age ```html
+                    <input type="text" id="age"
 " name="age" placeholder="Age" required>
                     <button type="button" class="voice-icon" onclick="startVoiceInput('age')">🎤</button>
                 </label>
