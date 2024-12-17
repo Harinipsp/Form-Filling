@@ -24,8 +24,8 @@
         }
 
         h2 {
-            font-family: 'Sacramento', cursive;
-            color: #4a90e2;
+            font-family: sans-serif;
+            color: #7ab2f1;;
             font-size: 3em;
             margin-bottom: 20px;
         }
@@ -42,7 +42,7 @@
             border: 1px solid #ccc;
             border-radius: 8px;
             font-size: 16px;
-            box-sizing: border-box; /* Prevents input box size changes */
+            box-sizing: border-box; 
         }
 
         .mic-icon, .eye-icon {
@@ -55,7 +55,7 @@
         }
 
         .eye-icon {
-            right: 50px; /* Positioned before the mic icon */
+            right: 50px; 
         }
 
         .button-container {
@@ -81,7 +81,7 @@
         }
 
         .signup-button {
-            background-color: #007bff;
+            background-color: #62aeff;
         }
 
         .signup-button:hover {
@@ -119,6 +119,7 @@
                 {% for category, message in messages %}
                     <li class="{{ category }}">{{ message }}</li>
                 {% endfor %}
+
                 </ul>
             {% endif %}
         {% endwith %}
