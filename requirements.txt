@@ -1,7 +1,7 @@
 Flask
 mysql-connector-python
 Werkzeug
-whisper
+openai-whisper
 pydub
 noisereduce
 numpy
