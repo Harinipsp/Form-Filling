@@ -1,9 +1,9 @@
-Flask==2.0.3
-mysql-connector-python==8.0.27
-Werkzeug==2.0.3
-whisper==1.0.0
-pydub==0.25.1
-noisereduce==0.2.1
-numpy==1.21.2
-scipy==1.7.1
+Flask
+mysql-connector-python
+Werkzeug
+whisper
+pydub
+noisereduce
+numpy
+scipy
 googletrans==4.0.0-rc1
