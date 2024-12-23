@@ -1,0 +1,10 @@
+Flask
+mysql-connector-python
+Werkzeug
+openai-whisper
+pydub
+noisereduce
+numpy
+scipy
+googletrans==4.0.0-rc1
+gunicorn
