@@ -14,7 +14,7 @@ app = Flask(__name__)
 app.secret_key = os.urandom(24)
 
 # Load the Whisper model
-model = whisper.load_model("tiny")
+model = whisper.load_model("base")
 
 # Translator for multilingual support
 translator = Translator()
