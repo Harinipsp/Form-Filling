@@ -40,7 +40,7 @@ Welcome to the **Form-Filling Application**! This project is designed to simplif
 
 The project is deployed and accessible using the link below:
 
-**[Form-Filling Application Live Deployment](web-production-ee36.up.railway.app)**
+**[Form-Filling Application Live Deployment](https://web-production-ee36.up.railway.app/signup)**
 
 ---
 
@@ -85,18 +85,5 @@ The project is deployed and accessible using the link below:
 5. **Access Locally:**
    Open your browser and navigate to `http://localhost:5000`.
 
----
-
-## Contributions
-
-Contributions are welcome! Feel free to fork the repository and submit a pull request.
-
----
-
-## License
-
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
-
----
 
 
