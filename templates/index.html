@@ -23,15 +23,15 @@
             <section class="section">
                 <h2 id="personalInfoTitle">Personal Information</h2>
                 <label id="firstNameLabel">First Name:
-                    <input type="text" id="firstName" name="firstName" placeholder="First Name" required>
+                    <input type="text" id="firstName" name="firstName" placeholder="First Name" value="{{ first_name }}" required>
                     <button type="button" class="voice-icon" onclick="startVoiceInput('firstName')">🎤</button>
                 </label>
                 <label id="middleNameLabel">Middle Name:
-                    <input type="text" id="middleName" name="middleName" placeholder="Middle Name">
+                    <input type="text" id="middleName" name="middleName" placeholder="Middle Name" value="{{ middle_name }}">
                     <button type="button" class="voice-icon" onclick="startVoiceInput('middleName')">🎤</button>
                 </label>
                 <label id="lastNameLabel">Last Name:
-                    <input type="text" id="lastName" name="lastName" placeholder="Last Name" required>
+                    <input type="text" id="lastName" name="lastName" placeholder="Last Name" required value="{{ last_name }}">
                     <button type="button" class="voice-icon" onclick="startVoiceInput('lastName')">🎤</button>
                 </label>
                 <label id="genderLabel">Gender: <br>
@@ -84,7 +84,7 @@
                     <button type="button" class="voice-icon" onclick="startVoiceInput('zipCode')">🎤</button>
                 </label>
                 <label id="emailLabel">Email: <br>
-                    <input type="email" id="email" name="email" placeholder="Email" required>
+                    <input type="email" id="email" name="email" placeholder="Email" required value="{{ email }}">
                     <button type="button" class="voice-icon" onclick="startVoiceInput('email')">🎤</button>    
                 </label>
                 <label id="phoneNumberLabel">Phone Number:
@@ -123,11 +123,11 @@
                 </label>
             </section>
         
-            <section class="section">
+            <!-- <section class="section">
                 <label id="digitalSignatureLabel" for="digitalSignature">Digital Signature:</label>
                 <canvas id="signatureCanvas" width="400" height="150" style="border: 1px solid #ccc;"></canvas>
                 <button type="button" id="clearSignature">Clear Signature</button>
-            </section>
+            </section> -->
         
             <div class="su">
                 <button id="submitButton" type="submit">Submit</button>

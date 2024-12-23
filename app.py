@@ -92,6 +92,7 @@ def submit_signup():
         return redirect('/signup')
 
 # Login submission route
+# Login submission route
 @app.route('/submit_login', methods=['POST'])
 def submit_login():
     email = request.form['email']
@@ -105,7 +106,11 @@ def submit_login():
         if user and check_password_hash(user['password'], password):
             session['user_id'] = user['id']
             session['email'] = user['email']
+            session['first_name'] = user['firstName']  # Store first name in session
+            session['middle_name'] = user['middleName']  # Store middle name in session
+            session['last_name'] = user['lastName']  # Store last name in session
             flash("Login successful!", "success")
+            print("Session Variables:", session)
             return redirect('/form-filling')
         else:
             flash("Invalid credentials. Please try again.", "error")
@@ -121,6 +126,11 @@ def form_filling():
     if 'user_id' not in session:
         flash("Please log in to access the Medical Insurance Form.", "warning")
         return redirect('/login')
+    # Retrieve user details from session
+    first_name = session.get('first_name', '')
+    middle_name = session.get('middle_name', '')
+    last_name = session.get('last_name', '')
+    email = session.get('email', '')
 
     if request.method == 'POST':
         try:
@@ -129,6 +139,8 @@ def form_filling():
             middle_name = request.form.get('middleName', '')
             last_name = request.form['lastName']
             gender = request.form.get('gender', 'not specified')
+            age = request.form['age']  # Collect age
+            status = request.form.get('status', 'not specified')  # Collect status
             dob = request.form['dob']
             email = request.form['email']
             street_address = request.form['streetAddress']
@@ -140,29 +152,32 @@ def form_filling():
             applicant_full_name = request.form.get('applicantFullName', '')
             applicant_gender = request.form.get('applicantGender', '')
             applicant_dob = request.form.get('applicantDob', '')
+            
 
             # Insert into the database
             query = """
-            INSERT INTO InsuranceForms (firstName, middleName, lastName, gender, dob, email, streetAddress, city, stateProvince, zipCode, phoneNumber, applicantType, applicantFullName, applicantGender, applicantDob)
-            VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s)
+            INSERT INTO InsuranceForms (firstName, middleName, lastName, gender, age, status, dob, streetAddress, city, stateProvince, zipCode, email, phoneNumber, applicantType, applicantFullName, applicantGender, applicantDob)
+            VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s)
             """
-            values = (first_name, middle_name, last_name, gender, dob, email, street_address, city, state_province, zip_code, phone_number, applicant_type, applicant_full_name, applicant_gender, applicant_dob)
+            values = (first_name, middle_name, last_name, gender, age, status, dob, street_address, city, state_province, zip_code, email, phone_number, applicant_type, applicant_full_name, applicant_gender, applicant_dob)
+
+            # Debugging output
+            print("Query:", query)
+            print("Values:", values)
+
             with get_db_connection() as db:
                 with db.cursor() as cursor:
                     cursor.execute(query, values)
                     db.commit()
 
             flash("Form submitted successfully!", "success")
-           
             return redirect('/form-filling')
         except mysql.connector.Error as err:
             print(f"Database Error: {err}")
             flash("There was an error while submitting the form. Please try again.", "error")
             return redirect('/form-filling')
 
-    return render_template('index.html')
-
-
+    return render_template('index.html', first_name=first_name, middle_name=middle_name, last_name=last_name, email=email)
 # Speech-to-text route
 @app.route('/transcribe', methods=['POST'])
 def transcribe_audio():
