@@ -11,8 +11,7 @@ Welcome to the **Form-Filling Application**! This project is designed to simplif
 3. [Deployment](#deployment)
 4. [Usage](#usage)
 5. [Setup Instructions](#setup-instructions)
-6. [Contributions](#contributions)
-7. [License](#license)
+
 
 ---
 
