@@ -96,7 +96,7 @@ Since Railway platform provide only limited services, the first link may go inac
 
 ### MIT License
 
-Copyright (c) 2024 Infosys
+Copyright (c) 2024 vidzai Digital 
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
